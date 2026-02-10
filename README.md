@@ -1,30 +1,119 @@
-# Complete Budget App by Sagnik Bhattacharya Udemy
-## Instructions:
-1. Connect with your credentials of Firebase from the lecture "Connect Firebase to Flutter project using CLI"
-2. The app will show a blank screen, so code along with the video and finally your code will start working.
+# Budget App 📊💰
+---
 
-## Overview
-Welcome to the Complete Budget App! This app is a hands-on project from the Flutter course presented by Coding Liquids. It's designed to provide an intuitive budget tracking experience for users and offer a comprehensive introduction to Flutter development for students.
+##  Features
 
-## Features
-Budget Tracking: Keep track of your expenses and income in a user-friendly interface.
-Customizable Categories: Create and customize your expense and income categories.
-Graphical Analysis: Visualize your financial trends with dynamic graphs and charts.
-Reminders: Set up reminders for bills and other important dates.
-Backup & Restore: Save your data and restore it with ease.
-Getting Started
-Prerequisites
-Flutter SDK (Latest version)
-Dart (Latest version)
-Android Studio or VS Code with Flutter plugins
+* 🔐 **Firebase Authentication** (Email/Password)
+* ☁️ **Cloud Firestore** for real-time data storage
+* 🧠 **State Management**
 
-## Acknowledgments
-A big shoutout to Coding Liquids for the insightful Flutter course that paved the way for this app. A deep dive into the world of Flutter, their course not only introduces the basics but ensures a complete and holistic understanding of the framework.
+  * Provider (basic app state)
+  * Riverpod (scalable & testable logic)
+* 💵 **Income-based Budget Calculation**
+* 🧾 Add / Edit / Delete Expenses
+* 📈 Remaining budget auto-update
+* 🔄 Real-time sync across devices
+
+---
+
+## 🛠 Tech Stack
+
+* **Flutter** (Dart)
+* **Firebase Authentication**
+* **Cloud Firestore**
+* **Provider**
+* **Riverpod**
+
+---
+
+## 📱 App Flow
+
+1. User **Sign Up / Login** karta hai
+2. User apni **Monthly Income** enter karta hai
+3. User **Expenses add** karta hai (Food, Rent, Transport, etc.)
+4. App automatically:
+
+   * Total Expenses calculate karta hai
+   * Remaining Budget show karta hai
+5. Saara data **Firestore** me save hota hai
+
+---
+
+## 🧮 Budget Calculation Logic
+
+```text
+Remaining Budget = Monthly Income − Total Expenses
+```
+
+Example:
+
+* Income: 50,000
+* Expenses: 32,000
+* Remaining Budget: **18,000**
+
+---
+
+## 🔐 Firebase Authentication
+
+* Email & Password based login
+* Firebase handles:
+
+  * User creation
+  * Login session
+  * Logout
+
+Each user ka data **securely** Firestore me store hota hai.
+
+---
+
+## ☁️ Firestore Database Structure
+
+```text
+users (collection)
+ └── userId (document)
+     ├── name: string
+     ├── email: string
+     ├── income: number
+     └── expenses (sub-collection)
+         └── expenseId (document)
+             ├── title: string
+             ├── amount: number
+             ├── category: string
+             └── date: timestamp
+```
+
+---
+
+## 🧠 State Management
+
+### Provider
+
+* UI-related simple states
+* Form loading / button states
+
+### Riverpod
+
+* Business logic
+* Firestore streams
+* Budget calculation providers
+
+Riverpod app ko **clean**, **scalable**, aur **testable** banata hai.
+
+## 🔮 Future Improvements
+
+* 📊 Monthly charts & analytics
+* 🏦 Multiple income sources
+* 📤 Export data (PDF / Excel)
+* 🌙 Dark Mode
+* 🔔 Budget limit notifications
+
+---
+
+## 👨‍💻 Author
+
+**Muhammad Tahir**
+Flutter & Android Developer
+
+---
 
 
-## Contact
-Sagnik Bhattacharya - sagnikbhattacharya@codingliquids.com
-
-## Project Link: https://github.com/sagnik150699/complete-budget-app
-
-Happy Coding! 🚀
